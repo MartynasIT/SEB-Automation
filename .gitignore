@@ -291,18 +291,21 @@ Servers/.jenkins/war/WEB-INF/lib/xstream-1.4.19.jar
 Servers/jenkins.war
 Servers/selenium-server-4.7.2.jar
 
-Automation/.idea/
-Automation/.settings/
-Automation/target/
+/.idea/
+/.settings/
+/target/
 
-Automation/*.log
-Automation/Reports/
+*.log
+/Reports/
 
-Automation/target/test-classes/
-Automation/target/classes/
-Automation/target/cucumber-logs/
-Automation/target/generated-sources/
-Automation/target/generated-test-sources/
-Automation/target/maven-status/
-Automation/*/target/*
+/target/test-classes/
+/target/classes/
+/target/cucumber-logs/
+/target/generated-sources/
+/target/generated-test-sources/
+/target/maven-status/
+/*/target/*
 
+Automation/.classpath
+.project
+.classpath

@@ -31,6 +31,7 @@ pipeline {
                     }
                 }
                 }
+                }
         post {
             always {
                 archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
