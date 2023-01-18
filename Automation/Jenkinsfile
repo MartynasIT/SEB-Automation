@@ -1,0 +1,43 @@
+
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/myrepo/myproject.git'
+            }
+        }
+        stage('Selection') {
+            steps {
+                script {
+                    def options = input message: 'Please choose an option:', parameters: [
+                        [$class: 'ChoiceParameter', name: 'Option', choices: 'web\napi\nboth', description: 'Select option']
+                    ]
+                    def browser = input message: 'Please choose a browser:', parameters: [
+                        [$class: 'ChoiceParameter', name: 'Browser', choices: 'chrome\nFirefox\nedge', description: 'Select browser']
+                    ]
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    if (options.Option == 'web') {
+                        sh "mvn test -Dbrowser=${browser.Browser}"
+                    } else if (options.Option == 'api') {
+                        sh "mvn test -Papi"
+                    } else {
+                        sh "mvn test -Dbrowser=${browser.Browser}"
+                        sh "mvn test -Papi"
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
+            cleanWs()
+        }
+    }
+}
