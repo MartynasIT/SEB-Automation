@@ -1,29 +1,20 @@
 package com.automation.framework.driver;
 
-import com.automation.framework.utils.SystemUtil;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.config.OperatingSystem;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ChromeDriverManager extends DriverManager {
 
     @Override
     protected void createWedDriver() {
-        SystemUtil.OSType os = SystemUtil.getOperatingSystemType();
-        switch (os) {
-            case WINDOWS:
-                WebDriverManager.chromedriver().operatingSystem(OperatingSystem.WIN).setup();
-                break;
-            case MACOS:
-                WebDriverManager.chromedriver().operatingSystem(OperatingSystem.MAC).setup();
-                break;
-            case LINUX:
-                WebDriverManager.chromedriver().operatingSystem(OperatingSystem.LINUX).setup();
-                break;
-            default:
-                throw new RuntimeException("Unsupported OS");
+        try {
+            driver.set(new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), new ChromeOptions()));
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
         }
-        driver.set(new ChromeDriver());
         driver.get().manage().window().maximize();
     }
 }
