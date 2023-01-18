@@ -21,17 +21,17 @@ pipeline {
                 steps {
                     script {
                         if (params.CHOICE == 'Web') {
-                            bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=Chrome test"
-                        } else if (params.CHOICE == 'Api') {
-                              bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=Chrome test"
+                            bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=${params.BROWSER} test"
+                        } else if (params.CHOICE == 'API') {
+                              bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=${params.BROWSER} test"
                         } else {
-                             bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=Chrome test"
-                        
+                             bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=${params.BROWSER} test"
+
                         }
                     }
                 }
                 }
-                }
+        }
         post {
             always {
                 archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
