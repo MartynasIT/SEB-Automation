@@ -9,8 +9,8 @@ This project requires Java 11 to be installed on your system. This is because th
 
 - Once the servers are running, you can access the Jenkins dashboard by visiting http://localhost:8080 in your web browser. The login credentials are as follows:
 
- * username: admin
- * password: 601208f8a7174ca395e944c5be58b7e3
+     - username: admin
+     -  password: 601208f8a7174ca395e944c5be58b7e3
 - After logging in, you can use the "Automation" job to run connection tests and web tests.
 
 It's important to note that these instructions are for Windows.
