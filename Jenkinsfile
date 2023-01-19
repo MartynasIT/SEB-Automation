@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    maven "M3",
+    maven "M3"
     NodeJS "Node"
   }
 
@@ -11,37 +11,34 @@ pipeline {
     choice(name: 'BROWSER', choices: ['Chrome', 'Edge'], description: 'Choose which browser to run the tests on')
   }
 
-  stage('Web Test') {
-    when {
-      params.CHOICE == 'WEB' || params.CHOICE == 'Both'
+  stages {
+    stage('Web Test') {
+      when {
+        expression { params.CHOICE == 'WEB' || params.CHOICE == 'Both' }
+      }
+      steps {
+        script {
+          bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/AmazonSuite.xml -Dbrowser=${params.BROWSER} test"
+        }
+      }
     }
-    steps {
-      script {
 
-        bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/AmazonSuite.xml -Dbrowser=${params.BROWSER} test"
-
+    stage('API Test') {
+      when {
+        expression { params.CHOICE == 'API' || params.CHOICE == 'Both' }
+      }
+      steps {
+        script {
+          bat "newman run collection.json -r html --reporter-html-export 'Reports/report.html'"
+        }
       }
     }
   }
-}
 
-stage('API Test') {
-  when {
-    params.CHOICE == 'API' || params.CHOICE == 'Both'
-  }
-  steps {
-    script {
-
-      bat "newman run collection.json -r html --reporter-html-export 'Reports/report.html'"
-
+  post {
+    always {
+      archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
+      cleanWs()
     }
   }
-}
-
-post {
-  always {
-    archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
-    cleanWs()
-  }
-}
 }
