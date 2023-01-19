@@ -1,13 +1,16 @@
-# How To Run
+#Project Setup
+This project requires Java 11 to be installed on your system. This is because the Jenkins server used in this project requires Java 11.
 
- To run selenium Task CMD to project's location and use:
- 1. mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=Chrome test 
- 2. Using InteliJ Run configuration.
- 
- Edge can be chosen too via  -Dbrowser=Edge or not even passing this parameter because this default choice for my framework.
- ![image](https://user-images.githubusercontent.com/25178870/156804102-dd6e0b5a-a8d6-480f-99da-98c3de5c6f44.png)
+First, switch to the servers branch. Then, copy all the files from this branch to a directory of your choice.
 
-# Warning
+To start the Jenkins server, run the start_jenkins_server.bat file.
 
-Target Java version is 11. Change <maven.compiler.target>11</maven.compiler.target> in pom.xml to your choice of Java.
-If new java downloaded don't forget to create enviroment variables in Windows.
+To start the Grid server, run the start_grid_server.bat file. 
+
+Once the server is running, you can access the Jenkins dashboard by visiting http://localhost:8080 in your web browser. The login credentials are as follows:
+
+username: admin
+password: 601208f8a7174ca395e944c5be58b7e3
+After logging in, you can use the "Automation" job to run connection tests and web tests.
+
+It's important to note that these instructions are for windows.
