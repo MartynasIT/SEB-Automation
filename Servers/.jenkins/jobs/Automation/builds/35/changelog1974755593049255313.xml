@@ -1,0 +1,13 @@
+commit 0e59fa5c6a30930548c03a3961dbf763cff3b8fc
+tree 8ad3ffa4dcfcb809e56e6103a22d0273ff05aca7
+parent 7d180a1c85800e4ddedf10323572fb06cfb2b1f7
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 17:52:14 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 17:52:14 +0200
+
+    updated perf test
+    
+    for whatever reason sometimes it lags ant takes 12 secs
+
+
+:100644 100644 265466f1f58720dc619c5eef4ca4a28dbfde9753 094a020ba5872bf3e5a0192af67ce3b8944aa4b4 M	Amazon.postman_collection.json
+:100644 100644 ea227074a7333b7710460d7edac7ae1390952d70 fcb010c3f9a5d5ae934cea3ce1a26cf005ee0837 M	Jenkinsfile

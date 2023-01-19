@@ -1,0 +1,14 @@
+{
+  "Searching for Keychain under 25 USD and 6+ age : Edge": {
+    "Passed": false,
+    "Error_Log": "Looking for filter option $0 - $25 And It Was Not Found!",
+    "Method_Name": "testFilterAndBasket",
+    "Browser": "Edge"
+  },
+  "Searching for Grogu and Yoda and then adding to cart : Edge": {
+    "Passed": false,
+    "Error_Log": "Suggestion should have contained Yoda expected [true] but found [false]",
+    "Method_Name": "testSearchSuggestion",
+    "Browser": "Edge"
+  }
+}

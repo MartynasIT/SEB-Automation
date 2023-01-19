@@ -1,0 +1,87 @@
+commit 3432dac9f4ac3e88293361a8082bac8bed6aa1be
+tree 1f03c14dd06e3355fd71db42b23686fa7f0cfd54
+parent 9deaeed2cb444011ec35607c8e7cad884deb6a23
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:41:37 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:41:37 +0200
+
+    Update Jenkinsfile
+
+
+:100644 100644 af7e07b1ca02dccc3fca1882953d839c6229eebb e12fb703d27be601f589f175aa1674c124f06c30 M	Jenkinsfile
+commit 9deaeed2cb444011ec35607c8e7cad884deb6a23
+tree a363af6601aadf4eea88cd9734c14fb500b4243a
+parent 552110f8d0ba21198e105365737a1c20bc46534e
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:28:07 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:28:07 +0200
+
+    Update Jenkinsfile
+
+
+:100644 100644 1f8f22c6b2fdf67f673bd769c5702cc0aba5897a af7e07b1ca02dccc3fca1882953d839c6229eebb M	Jenkinsfile
+commit 552110f8d0ba21198e105365737a1c20bc46534e
+tree 1987fa63d916469200f00cff416ecf462603dae7
+parent 44df2c6f3a2c6924dbb907bf73537971e6d74de4
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:23:19 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:23:19 +0200
+
+    Update Jenkinsfile
+
+
+:100644 100644 ed0087210d0e713a7987d66b5f4380857084fb86 1f8f22c6b2fdf67f673bd769c5702cc0aba5897a M	Jenkinsfile
+commit 44df2c6f3a2c6924dbb907bf73537971e6d74de4
+tree 8a59e2a444bc259806caab139d02721caef0fd5c
+parent aff850fd33dfb8070c2d2dd5761aed9e1143ccf3
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:20:10 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:20:10 +0200
+
+    Update Jenkinsfile
+
+
+:100644 100644 ce07c6d62c307e19bbaa7bedd69926b174896533 ed0087210d0e713a7987d66b5f4380857084fb86 M	Jenkinsfile
+commit aff850fd33dfb8070c2d2dd5761aed9e1143ccf3
+tree 31b1927639ce1c1564b88b0ee83634e409578f8d
+parent ded0b185afaee2093c095d4aef6b3b65fd457ee2
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:18:59 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:18:59 +0200
+
+    Update Jenkinsfile
+
+
+:100644 100644 8efced216c824d77cd1e21ea96443b1637e899f9 ce07c6d62c307e19bbaa7bedd69926b174896533 M	Jenkinsfile
+commit ded0b185afaee2093c095d4aef6b3b65fd457ee2
+tree a32230a582503c9f7248db0fe7080f9e48b3849e
+parent 983d801b847e8edae4684dc8352c844a5e06d8c9
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:17:22 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 16:17:22 +0200
+
+    ui task finished
+
+
+:100644 100644 809a44d7805ec983add82404064fca547d4f0af6 8efced216c824d77cd1e21ea96443b1637e899f9 M	Jenkinsfile
+:100644 100644 df6d33cea467ff6f404d92551e01b384416fdbfb 09107f3758e1dd3451f6a1059265961859bb7578 M	pom.xml
+:100644 100644 306afab1c1e91c1dc5a37ed8246b60ab5169d331 943c9039f0b650340f8b5b8abefb7951c128f58c M	src/main/java/com/automation/framework/loging/ConsoleLogger.java
+:100644 100644 8f56f2463188e681a74f94fffecd985f468d0ec7 4c4a11c5f042687a1a57921b16458c5124d7e3c0 M	src/main/java/com/automation/framework/utils/ArrayWorker.java
+:100644 100644 64292a79d6920c9f868051f1d349de5e007c474f 210098219ae515e2873bc38d09df5ef2d129c3ac M	src/main/java/com/automation/framework/utils/CoreSelenium.java
+:100644 100644 526fb3f0c4f9936c0b4d5dc1ef6e7867ca19d5ec 6f5e98fbda69b37769645f6cd52955c39449230e M	src/main/java/com/automation/framework/utils/JsonReader.java
+:100644 100644 1d85bb650e10ab3af923c770a5c0f3a9da5aded5 049fb77bc7f86c7bdaac12be7e7ade83363a0a3b M	src/test/java/com/automation/legoproject/base/BaseTest.java
+:100644 100644 34c4cd0c1a6a22925e795e3c12b47d9a8f30a7de d24e04556d62e8c3325afd1f568c63dad8154379 M	src/test/java/com/automation/legoproject/base/PageNavigator.java
+:100644 000000 9e735c7ca4a62a1104006103d608ebc5430d4b93 0000000000000000000000000000000000000000 D	src/test/java/com/automation/legoproject/cucumber/features/Filter.feature
+:100644 000000 8cc4d99799096b48c98fbd4dba3ac069b5560532 0000000000000000000000000000000000000000 D	src/test/java/com/automation/legoproject/cucumber/stepDefinitions/FilterSteps.java
+:100644 000000 77a7cde52db25dbd2673967fc419c4077b9fb6af 0000000000000000000000000000000000000000 D	src/test/java/com/automation/legoproject/cucumber/testRunners/FilterTest.java
+:100644 100644 8f3505aa215296688c7b26e80962221de1d188ec 09cd7a3e7d9e0746af16fea74abcd769898d5f8b M	src/test/java/com/automation/legoproject/pagecomponents/HeaderMenu.java
+:100644 000000 5c10c08cfc37fe76aeae900be12874ca75de7dfc 0000000000000000000000000000000000000000 D	src/test/java/com/automation/legoproject/pagecomponents/SpamPopUp.java
+:100644 100644 82da4c2717b67fc06fbf01cad6358ed441b81a6a a67e8b0b8224e40d4efa97786c74b8e1c579ab2e M	src/test/java/com/automation/legoproject/pageobjects/CartPage.java
+:000000 100644 0000000000000000000000000000000000000000 cc04b91a6e4a50a6b370ee53a3c7ebb6f9157b11 A	src/test/java/com/automation/legoproject/pageobjects/CheckoutPage.java
+:000000 100644 0000000000000000000000000000000000000000 6f72309f12c37621f4372eb56e70543e2b2c4bd1 A	src/test/java/com/automation/legoproject/pageobjects/LoginPage.java
+:100644 100644 3aaccdc0a518c954579fc861582f052231272f9f 4f2ffa8fb657b1beef4dfb7e8b193380529e0890 M	src/test/java/com/automation/legoproject/pageobjects/MainPage.java
+:100644 100644 e8cd81281d34d694edf774ebbd8bc9b6351f5300 010704bc397039b6d86c2deff63e24b87b79139c M	src/test/java/com/automation/legoproject/pageobjects/ProductInfoPage.java
+:100644 100644 3b4686a979ec6831734f8c58ce60cd614ebc245c 19b590a9e5228aa2595e0ae05de2629ab04cdaea M	src/test/java/com/automation/legoproject/pageobjects/ProductSearchResultPage.java
+:100644 000000 23156dfb6a04de03afefbcdba97e3497584f66d1 0000000000000000000000000000000000000000 D	src/test/java/com/automation/legoproject/testcases/TestFilter.java
+:100644 100644 bd4830bc6db52fa8a5f00845d03bebbb333f191d be8ef0fe73c3b5481cf9e3e91938b93cfb0b938a M	src/test/java/com/automation/legoproject/testcases/TestSearch.java
+:100644 100644 20d7e78b2bd7832e9e90b3e23391283e3e077b99 d1c3d4cb3264426e724d84d3c594c1b25c4fd9ae M	src/test/resources/env.json
+:000000 100644 0000000000000000000000000000000000000000 534bb6b5aa898097ec67c273a3a4ee200263c419 A	src/test/resources/testdata/DataFidgetSearch.json
+:000000 100644 0000000000000000000000000000000000000000 bb2549ba24683c99b5b6207b909ca9571867a620 A	src/test/resources/testdata/DataFidgetSearchMore.json
+:100644 000000 30438308383baf74c7081727467861917d5d1272 0000000000000000000000000000000000000000 D	src/test/resources/testdata/DataKeychainSearch.json
+:100644 000000 223cbae412e1bc6426ef6a7bbd09915b8682b89f 0000000000000000000000000000000000000000 D	src/test/resources/testdata/DataSearch.json
+:100644 100644 3a85839b62a471e9c391b1f1d99f10730231905d 20a7eb6889f3a27fd751805fa46c58b4fe4e30f6 R056	src/test/resources/testsuites/CucumberTest.xml	src/test/resources/testsuites/AmazonSuite.xml
+:100644 000000 677a4c40617bbc60d3c9bf6c1f33b193171639c5 0000000000000000000000000000000000000000 D	src/test/resources/testsuites/LegoSuite.xml

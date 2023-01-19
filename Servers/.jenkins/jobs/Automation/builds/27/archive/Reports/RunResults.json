@@ -1,0 +1,8 @@
+{
+  "Searching for Fidget Spinner And Adding To Cart : Chrome": {
+    "Passed": true,
+    "Error_Log": "No Errors!",
+    "Method_Name": "testSearchAndCart",
+    "Browser": "Chrome"
+  }
+}

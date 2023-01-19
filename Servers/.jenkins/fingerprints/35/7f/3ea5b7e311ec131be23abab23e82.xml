@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2023-01-19 14:44:06.506 UTC</timestamp>
+  <original>
+    <name>Automation</name>
+    <number>25</number>
+  </original>
+  <md5sum>357f3ea5b7e311ec131be23abab23e82</md5sum>
+  <fileName>RunResults.json</fileName>
+  <usages>
+    <entry>
+      <string>Automation</string>
+      <ranges>25,27,34,36</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

@@ -1,0 +1,10 @@
+commit d680551d405b9abd77e05c0a1cbdcd8767a790ae
+tree fdd9d9d88eed9586c9ce4ec7685ea3703d6d025f
+parent 23bcd45e9eca2a83186fa434eb37002edaab5967
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 17:14:13 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 17:14:13 +0200
+
+    Update Amazon.postman_collection.json
+
+
+:100644 100644 dfcc746d473d4244096f9331c2a5e664577120ec 265466f1f58720dc619c5eef4ca4a28dbfde9753 M	Amazon.postman_collection.json

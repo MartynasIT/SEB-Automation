@@ -1,0 +1,12 @@
+commit 7d180a1c85800e4ddedf10323572fb06cfb2b1f7
+tree 020e3793bb53f1ea44df47717e4a676c620c90be
+parent d680551d405b9abd77e05c0a1cbdcd8767a790ae
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 17:29:08 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-19 17:29:08 +0200
+
+    jenkinsfile update
+
+
+:100644 100644 33447c43536e2319c882bf0beaf4d47c9096fd1c e9ce5873f4566ee5a79e97c53b59334785f11070 M	.gitignore
+:100644 100644 8bb8acbcfc067e9e81354ade59aabe8085209b60 ea227074a7333b7710460d7edac7ae1390952d70 M	Jenkinsfile
+:100644 000000 a7955eaf8fabab6a780047d7410345b1d69b0f3e 0000000000000000000000000000000000000000 D	Servers/.jenkins/queue.xml

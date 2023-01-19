@@ -1,0 +1,13 @@
+commit 983d801b847e8edae4684dc8352c844a5e06d8c9
+tree 4d5d51ec5c088a3423a6203ec2e02aefac34f227
+parent b5a1200610c568ccf7f427f6ce0bae10350a7d53
+author Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-18 18:51:36 +0200
+committer Martynas Gelumbauskas <martynas.gelumbauskas@gmail.com> 2023-01-18 18:51:36 +0200
+
+    added grid calling
+
+
+:100644 100644 df9bb853056b642118b40eef46b683a68e090fec 33447c43536e2319c882bf0beaf4d47c9096fd1c M	.gitignore
+:100644 000000 c40eb576a100adc65786e520f1ffd46d7ca71b48 0000000000000000000000000000000000000000 D	Automation/.idea/workspace.xml
+:100644 100644 666ad2a1880870719b8a793efdb64562a8a656f2 b865be59c831db4613412b89be7902dd797af2d9 M	src/main/java/com/automation/framework/driver/ChromeDriverManager.java
+:100644 100644 6200ffff9c0d5a92e1293f4a3abcf99c804c231d 3adda313f1fe9240f34ffc1dd937b2a9f57f9d44 M	src/main/java/com/automation/framework/driver/EdgeDriverManager.java

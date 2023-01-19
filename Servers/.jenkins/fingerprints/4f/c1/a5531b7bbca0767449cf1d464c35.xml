@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2023-01-19 15:31:26.898 UTC</timestamp>
+  <original>
+    <name>Automation</name>
+    <number>33</number>
+  </original>
+  <md5sum>4fc1a5531b7bbca0767449cf1d464c35</md5sum>
+  <fileName>report.html</fileName>
+  <usages>
+    <entry>
+      <string>Automation</string>
+      <ranges>33</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
