@@ -1,7 +1,7 @@
-#Project Setup
+# **Project Setup**
 This project requires Java 11 to be installed on your system. This is because the Jenkins server used in this project requires Java 11.
 
-First, switch to the servers branch. Then, copy all the files from this branch to a directory of your choice.
+First, switch to the "servers" branch. Then, copy all the files from this branch to a directory of your choice.
 
 To start the Jenkins server, run the start_jenkins_server.bat file.
 
