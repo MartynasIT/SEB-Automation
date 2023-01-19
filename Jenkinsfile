@@ -28,7 +28,7 @@ pipeline {
       }
       steps {
         script {
-          bat "newman run Amazon.postman_collection.json -r html --reporter-html-export 'Reports/report.html'"
+          bat "newman run Amazon.postman_collection.json -r html --reporter-html-export \"Reports/report.html\""
         }
       }
     }

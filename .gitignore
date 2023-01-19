@@ -310,3 +310,4 @@ Automation/.classpath
 .project
 .classpath
 Automation/.idea/workspace.xml
+Servers/.jenkins/queue.xml
