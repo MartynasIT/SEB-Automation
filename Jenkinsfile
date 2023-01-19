@@ -37,7 +37,7 @@ stage('API Test') {
     }
   }
 }
-}
+
 post {
   always {
     archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
