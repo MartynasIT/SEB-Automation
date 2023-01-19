@@ -11,6 +11,6 @@ This project requires Java 11 to be installed on your system. This is because th
 
      - username: admin
      -  password: 601208f8a7174ca395e944c5be58b7e3
-- After logging in, you can use the "Automation" job to run connection tests (includes performance test for amazon and checks if amazon, grid and jenkins servers are reachable) and web tests (Fidget spinners test).
+- After logging in, you can use the "Automation" job to run API tests (includes performance test for amazon and checks if amazon, grid and jenkins servers are reachable) and WEB tests (Fidget spinners test).
 
 It's important to note that these instructions are for Windows.
