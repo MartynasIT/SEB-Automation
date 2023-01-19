@@ -13,7 +13,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"Server Is Reachable\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -43,7 +43,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"Server Is Reachable\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
 						],
@@ -72,7 +72,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.test(\"Server Is Reachable\", function () {\r",
 							" pm.expect(pm.response.text()).to.include(\"Authentication required\");\r",
 							"});"
 						],
@@ -109,15 +109,16 @@
 							"    var startTime = new Date().getTime();\r",
 							"    pm.sendRequest(pm.request.url, function (err, res) {\r",
 							"        requestTime.push(new Date().getTime() - startTime);\r",
+							"        if (requestTime.length === iterations) {\r",
+							"            var totalTime = requestTime.reduce((a, b) => a + b);\r",
+							"            var averageTime = totalTime / iterations;\r",
+							"            pm.test(\"Performance test - Average Response Below 1000 ms\", function () {\r",
+							"                pm.expect(averageTime).to.be.below(1000);\r",
+							"            });\r",
+							"        }\r",
 							"    });\r",
-							"    pm.wait(delay);\r",
-							"}\r",
-							"\r",
-							"pm.test(\"Performance test\", function () {\r",
-							"    var totalTime = requestTime.reduce((a, b) => a + b);\r",
-							"    var averageTime = totalTime / iterations;\r",
-							"    pm.expect(averageTime).to.be.below(1000);\r",
-							"});"
+							"    setTimeout(() => {}, delay);\r",
+							"}"
 						],
 						"type": "text/javascript"
 					}
