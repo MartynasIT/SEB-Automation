@@ -2,8 +2,7 @@ pipeline {
   agent any
 
   tools {
-    maven "M3",
-    NodeJS "Node"
+    maven "M3"
   }
 
   parameters {
