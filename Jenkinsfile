@@ -7,7 +7,7 @@ pipeline {
 
   parameters {
     choice(name: 'CHOICE', choices: ['WEB', 'API', 'Both'], description: 'Choose whether to build a WEB or an API or Both')
-    choice(name: 'BROWSER', choices: ['Chrome', 'Edge'], description: 'Choose which browser to run the tests on')
+    choice(name: 'BROWSER', choices: ['Chrome', 'Edge'], description: 'Choose which browser to run the WEB tests on')
   }
 
   stages {
@@ -28,7 +28,7 @@ pipeline {
       }
       steps {
         script {
-          bat "newman run collection.json -r html --reporter-html-export 'Reports/report.html'"
+          bat "newman run Amazon.postman_collection.json -r html --reporter-html-export 'Reports/report.html'"
         }
       }
     }

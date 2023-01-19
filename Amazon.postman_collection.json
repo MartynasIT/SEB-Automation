@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "1f94d96d-253c-4e63-afbf-77529cb21183",
+		"name": "Amazon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10393928"
+	},
+	"item": [
+		{
+			"name": "Check Amazon Servers Are Reachable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.amazon.com",
+					"protocol": "http",
+					"host": [
+						"www",
+						"amazon",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Grid Server Is Reachable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "HEAD",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4444",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4444"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Jenkins Server Is Reachable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							" pm.expect(pm.response.text()).to.include(\"Authentication required\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Amazon Performance Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var iterations = 10;\r",
+							"var delay = 1000; // time in ms between requests\r",
+							"var requestTime = [];\r",
+							"\r",
+							"for (var i = 0; i < iterations; i++) {\r",
+							"    var startTime = new Date().getTime();\r",
+							"    pm.sendRequest(pm.request.url, function (err, res) {\r",
+							"        requestTime.push(new Date().getTime() - startTime);\r",
+							"    });\r",
+							"    pm.wait(delay);\r",
+							"}\r",
+							"\r",
+							"pm.test(\"Performance test\", function () {\r",
+							"    var totalTime = requestTime.reduce((a, b) => a + b);\r",
+							"    var averageTime = totalTime / iterations;\r",
+							"    pm.expect(averageTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.amazon.com",
+					"protocol": "http",
+					"host": [
+						"www",
+						"amazon",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
