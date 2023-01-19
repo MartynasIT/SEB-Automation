@@ -2,49 +2,36 @@ package com.automation.legoproject.pagecomponents;
 
 import com.automation.framework.utils.CoreSelenium;
 import com.automation.legoproject.base.BasePage;
+import com.automation.legoproject.pageobjects.LoginPage;
+import com.automation.legoproject.pageobjects.ProductSearchResultPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class HeaderMenu extends BasePage {
 
-    private final String HEADER_MENU_MAIN_NAVIGATION = "//nav[@data-test='main-navigation']";
-    private final String NAVIGATION_SUB_MENU = "//ul[@data-test='navigation-submenu']";
-    private final By SHOP_BUTTON = By.xpath(HEADER_MENU_MAIN_NAVIGATION + "//button[@data-analytics-title='shop']");
-    private final By LEGO_MERCHANDISE_BUTTON = By.xpath(NAVIGATION_SUB_MENU + "//button[@data-analytics-title='lego-merchandise']");
-    private final By KEYCHAINS_LINK = By.xpath("//a[@data-analytics-title='keyrings']");
-    private final By MY_BAG = By.xpath("//a[@aria-label='My Bag']");
-    private final By SEARCH_ICON = By.xpath("//button[@data-test='search-input-button']");
-    private final By SEARCH_INPUT = By.xpath("//input[@data-test='search-input']");
+    private final String HEADER_MENU_MAIN_NAVIGATION = "//div[@id='navbar']";
+    private final By SEARCH_FIELD = By.xpath(HEADER_MENU_MAIN_NAVIGATION + "//input[@id='twotabsearchtextbox']");
+    private final By CART = By.xpath(HEADER_MENU_MAIN_NAVIGATION + "//div[@id='nav-cart-text-container']");
+    private final By SIGN_IN = By.xpath(HEADER_MENU_MAIN_NAVIGATION + "//span[@id='nav-link-accountList-nav-line-1']");
+
+    private final By SEARCH_BUTTON = By.xpath(HEADER_MENU_MAIN_NAVIGATION + "//input[@id='nav-search-submit-button']");
+
 
     public HeaderMenu(CoreSelenium selenium) {
         super(selenium);
     }
 
-    public void clickShop() {
-        selenium.click(SHOP_BUTTON, "Clicking shop button");
+    public void clickCart() {
+        selenium.jsClick(selenium.findElement(CART), "Clicking Cart");
     }
 
-    public void clickMerchandise() {
-        selenium.click(LEGO_MERCHANDISE_BUTTON, "Clicking LEGO Merchandise button");
+    public ProductSearchResultPage enterSearch(String text) {
+        selenium.sendKeys(SEARCH_FIELD, text, "Entering into search filed: " + text);
+        selenium.click(SEARCH_BUTTON, "Clicking search button");
+        return new ProductSearchResultPage(selenium);
     }
 
-    public void clickKeychains() {
-        selenium.click(KEYCHAINS_LINK, "Clicking keychains link");
-    }
-
-    public void clickBag() {
-        selenium.jsClick(selenium.findElement(MY_BAG), "Clicking my bag");
-    }
-
-    public void enterSearch(String text) {
-        selenium.jsClick(selenium.findElement(SEARCH_ICON), "Clicking on search icon");
-        selenium.sendKeys(SEARCH_INPUT, text, "Searching for " + text);
-    }
-
-    public List<WebElement> getSuggestions() {
-        return selenium.findElements(By.xpath("//p[@data-test='product-suggestion-name']"));
-
+    public LoginPage clickLogin() {
+        selenium.click(SIGN_IN);
+        return new LoginPage(selenium);
     }
 }

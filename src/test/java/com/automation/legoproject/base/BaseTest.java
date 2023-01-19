@@ -2,31 +2,41 @@ package com.automation.legoproject.base;
 
 import com.automation.framework.driver.DriverFactory;
 import com.automation.framework.driver.DriverManager;
-import com.automation.framework.loging.JsonLogger;
 import com.automation.framework.loging.Log4jLogger;
 import com.automation.framework.utils.CoreSelenium;
-import com.automation.framework.utils.JsonReader;
+import com.automation.framework.utils.JsonReader;;
 import lombok.Getter;
 import lombok.Setter;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+
 import java.io.File;
 
 
 public class BaseTest {
     protected CoreSelenium selenium;
-    @Setter @Getter
+    @Setter
+    @Getter
     protected DriverManager driverManager;
-    @Setter @Getter
+    @Setter
+    @Getter
     private JsonReader jsonReader;
     private static final String ENVIRONMENTS = "src/test/resources/env.json";
-    @Setter @Getter
+    @Setter
+    @Getter
     private TestContext testContext;
+    @Setter
+    @Getter
+    private static String email;
+    @Setter
+    @Getter
+    private static String password;
     private static boolean suiteRan;
 
     @BeforeTest
     @Parameters("testDataPath")
     public void setup(@Optional String testDataPath) {
+        setLogin();
         setTestContext(new TestContext(Reporter.getCurrentTestResult().getTestContext()));
         String browser = ((System.getProperty("browser") == null) ? "Edge" : System.getProperty("browser"));
         if (testDataPath != null)
@@ -43,7 +53,7 @@ public class BaseTest {
     @BeforeMethod
     public void startDriver() {
         Log4jLogger.log("Test Started: " + getTestContext().getDetail("JsonTestName"));
-        selenium.get(new JsonReader(ENVIRONMENTS).getValue("Lego.URL"), "Launching website");
+        selenium.get(new JsonReader(ENVIRONMENTS).getValue("Amazon.URL"), "Launching website");
     }
 
     @AfterTest
@@ -51,13 +61,9 @@ public class BaseTest {
         getDriverManager().quitWebDriver();
     }
 
-    @BeforeSuite
-    public void deleteReport() {
-        if(!suiteRan) {
-            suiteRan = true;
-            File logFile = new File(JsonLogger.JSON_PATH);
-            if(logFile.exists())
-                logFile.delete();
-        }
+    private void setLogin() {
+        JsonReader env = (new JsonReader(ENVIRONMENTS));
+        setEmail(env.getValue("Amazon.Login"));
+        setPassword(env.getValue("Amazon.Password"));
     }
 }

@@ -1,0 +1,9 @@
+{
+  "Test_Name": "Searching for Fidget Spinner And Adding To Cart",
+  "Search": {
+    "Item": "Fidget Spinner",
+    "Sort": "Avg. Customer Review"
+  },
+  "Add": [3,4],
+  "Remove": [4]
+}

@@ -4,6 +4,7 @@ import com.automation.framework.loging.Log4jLogger;
 import com.automation.framework.utils.CoreSelenium;
 import com.automation.legoproject.pagecomponents.HeaderMenu;
 import com.automation.legoproject.pageobjects.CartPage;
+import com.automation.legoproject.pageobjects.LoginPage;
 import com.automation.legoproject.pageobjects.ProductSearchResultPage;
 
 public class PageNavigator extends BasePage{
@@ -13,19 +14,16 @@ public class PageNavigator extends BasePage{
         super(selenium);
         header = new HeaderMenu(selenium);
     }
-
-    public ProductSearchResultPage navigateToProductsKeychains() {
-        Log4jLogger.log("Navigating to keychains");
-        header.clickShop();
-        header.clickMerchandise();
-        header.clickKeychains();
-        return new ProductSearchResultPage(selenium);
-    }
-
     public CartPage navigateToCart() {
         Log4jLogger.log("Navigating to Cart");
-        header.clickBag();
+        header.clickCart();
         return new CartPage(selenium);
+    }
+
+    public LoginPage navigateToLogin() {
+        Log4jLogger.log("Navigating to Login");
+        header.clickLogin();
+        return new LoginPage(selenium);
     }
 }
 

@@ -6,9 +6,13 @@
         <listener class-name="com.automation.framework.listeners.AnnotationTransformer"/>
     </listeners>
 
-    <test name="Test filter">
+    <test name="Test search spinners and cart">
+        <parameter name="testDataPath" value="src/test/resources/TestData/DataFidgetSearch.json"/>
         <classes>
-            <class name="com.automation.legoproject.cucumber.testRunners.FilterTest">
+            <class name="com.automation.legoproject.testcases.TestSearch">
+                <methods>
+                    <include name="testSearchAndCart"/>
+                </methods>
             </class>
         </classes>
     </test>

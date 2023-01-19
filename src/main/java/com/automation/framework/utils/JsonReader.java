@@ -13,9 +13,11 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 
 public class JsonReader {
-    @Getter @Setter
+    @Getter
+    @Setter
     private String path;
-    @Getter @Setter
+    @Getter
+    @Setter
     private JSONObject jsonObject;
     JSONParser parser;
 

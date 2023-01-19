@@ -23,9 +23,11 @@ import org.openqa.selenium.support.ui.*;
 public class CoreSelenium {
 
     private final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
-    @Setter @Getter
+    @Setter
+    @Getter
     private static Integer maxWaitTime = 20;
-    @Setter @Getter
+    @Setter
+    @Getter
     private static Integer pollTime = 2;
     private Log4jLogger logger;
 

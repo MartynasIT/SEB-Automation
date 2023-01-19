@@ -1,41 +1,47 @@
 pipeline {
-    agent any
+  agent any
 
-        tools {
-            maven "M3"
-        }
+  tools {
+    maven "M3"
+    NodeJS "Node"
+  }
 
-                 parameters {
-                        choice(name: 'CHOICE', choices: ['Web', 'API','Both'], description: 'Choose whether to build a WEB or an API or Both')
-                        choice(name: 'BROWSER', choices: ['Chrome', 'Firefox', 'Edge'], description: 'Choose which browser to run the tests on')
-                    }
+  parameters {
+    choice(name: 'CHOICE', choices: ['WEB', 'API', 'Both'], description: 'Choose whether to build a WEB or an API or Both')
+    choice(name: 'BROWSER', choices: ['Chrome', 'Edge'], description: 'Choose which browser to run the tests on')
+  }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/MartynasIT/SEB-Automation.git'
-            }
-        }
-
-        stage('Test') {
-                steps {
-                    script {
-                        if (params.CHOICE == 'Web') {
-                            bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=${params.BROWSER} test"
-                        } else if (params.CHOICE == 'API') {
-                              bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=${params.BROWSER} test"
-                        } else {
-                             bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/LegoSuite.xml -Dbrowser=${params.BROWSER} test"
-
-                        }
-                    }
-                }
-                }
-        }
-        post {
-            always {
-                archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
-                cleanWs()
-            }
-        }
+  stage('Web Test') {
+    when {
+      params.CHOICE == 'WEB' || params.CHOICE == 'Both'
     }
+    steps {
+      script {
+
+        bat "mvn -Dsurefire.suiteXmlFiles=src/test/resources/TestSuites/AmazonSuite.xml -Dbrowser=${params.BROWSER} test"
+
+      }
+    }
+  }
+}
+
+stage('API Test') {
+  when {
+    params.CHOICE == 'API' || params.CHOICE == 'Both'
+  }
+  steps {
+    script {
+
+      bat "newman run collection.json -r html --reporter-html-export 'Reports/report.html'"
+
+    }
+  }
+}
+}
+post {
+  always {
+    archiveArtifacts artifacts: 'Reports/*.json, Reports/*.html', fingerprint: true
+    cleanWs()
+  }
+}
+}
